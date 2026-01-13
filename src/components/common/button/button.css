@@ -1,0 +1,110 @@
+/* Reset básico */
+#button {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Contenedor de los botones */
+#buttons-container {
+    display: flex;  
+    flex-direction: column;  /* apilados verticalmente */
+    align-items: center;
+    gap: 16px;               /* separación entre botones */
+    margin-top: 60px;        /* baja todo el bloque */
+    padding-bottom: 30px;
+}
+
+/* Botón horizontal */
+div[id] {
+    width: 240px;            /* más ancho para acomodar icono + texto */
+    height: 60px;            /* menos alto que antes */
+    background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;     /* centra verticalmente icono y texto */
+    gap: 12px;               /* separación interna icono-texto */
+    padding: 0 16px;         /* espacio a los lados */
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15),   /* sombra principal */
+                0 0 0 1px rgba(255,255,255,0.05); /* borde tenue */
+    user-select: none;
+}
+
+/* Hover */
+div[id]:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.25),
+                0 0 0 1px rgba(255,255,255,0.08);
+}
+
+/* Click */
+div[id]:active {
+    transform: scale(0.98);
+}
+
+/* Contenedor de la imagen */
+#button-image {
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(6px);
+    flex-shrink: 0;          /* evita que el icono se reduzca */
+}
+
+/* Imagen */
+.button-image img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+/* Texto */
+.button-text {
+    margin: 0;
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-align: left;
+    opacity: 0.95;
+    flex: 1; /* ocupa el resto del espacio */
+}
+
+/* Separación visual: sombra gris entre botones */
+.buttons-container > div[id] + div[id] {
+    box-shadow: 0 2px 6px rgba(100, 100, 100, 0.15);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    div[id] {
+        width: 200px;
+        height: 50px;
+        padding: 0 12px;
+    }
+
+    .button-image {
+        width: 32px;
+        height: 32px;
+    }
+
+    .button-image img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .button-text {
+        font-size: 0.78rem;
+    }
+
+    .buttons-container {
+        gap: 12px;
+        margin-top: 40px;
+    }
+}
