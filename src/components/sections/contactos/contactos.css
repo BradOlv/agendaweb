@@ -3,5 +3,11 @@
     padding: 10px;
     display: flex;
     flex-direction: column;
+    gap: 8px;
+}
+
+#lista-contactos {
+    display: flex;
+    flex-direction: column;
     gap: 6px;
 }

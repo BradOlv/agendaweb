@@ -1,28 +1,28 @@
+function login() {
+    const section = document.createElement("section");
+    section.id = "login";
 
-let login = function () {
+    const h3 = document.createElement("h3");
+    h3.textContent = "Login";
 
-    let login = document.createElement("section");
-
-
-    let h3 = document.createElement("h3");
-    h3.innerHTML = "Login";
-
-    let user = document.createElement("input");
-    user.type = "text";
+    const user = document.createElement("input");
     user.placeholder = "Usuario";
 
-    let password = document.createElement("input");
-    password.type = "password";
-    password.placeholder = "Password";
+    const pass = document.createElement("input");
+    pass.type = "password";
+    pass.placeholder = "Password";
 
-    let button = document.createElement("button");
-    button.innerHTML = "Iniciar Sesión";
+    const button = document.createElement("button");
+    button.textContent = "Iniciar Sesión";
 
-    login.appendChild(h3);
-    login.appendChild(user);
-    login.appendChild(password);
-    login.appendChild(button);
+    button.addEventListener("click", () => {
+        const root = document.getElementById("root");
+        root.innerHTML = "";
+        cargarApp();
+    });
 
-    return login;
+    section.append(h3, user, pass, button);
+    return section;
 }
+
 export { login };

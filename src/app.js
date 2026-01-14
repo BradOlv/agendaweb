@@ -1,19 +1,31 @@
-
 import { Button } from "./components/common/button/button.js";
-import {contactos} from "./components/sections/contactos/contactos.js";
-import {formulario} from "./components/sections/formulario/formulario.js";
-// section app
-let app = document.getElementById("app");
+import { contactos } from "./components/sections/contactos/contactos.js";
+import { formulario } from "./components/sections/formulario/formulario.js";
 
-//section menu
 let nav = document.getElementById("nav");
+let container = document.getElementById("container");
 
-//Agregar botones al nav
-nav.appendChild(Button("Agenda", "agenda", "user.svg"));
-nav.appendChild(Button("crear contacto", "plus", "plus.svg"));
+nav.appendChild(Button(
+    "Agenda",
+    "agenda",
+    "user.svg",
+    function () {
+        container.innerHTML = "";
+        container.appendChild(contactos());
+    }
+));
+
+nav.appendChild(Button(
+    "crear contacto",
+    "plus",
+    "plus.svg",
+    function () {
+        container.innerHTML = "";
+        container.appendChild(formulario());
+    }
+));
+
 nav.appendChild(Button("ToDoList", "todolist", "list.svg"));
 nav.appendChild(Button("Crear tarea", "creartarea", "tarea.svg"));
-//container
-let container = document.getElementById("container");
+
 container.appendChild(contactos());
-    

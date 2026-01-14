@@ -4,7 +4,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Fondo general (opcional pero recomendado) */
+/* Fondo general */
 body {
     margin: 0;
     height: 100vh;
@@ -14,13 +14,12 @@ body {
     align-items: center;
 }
 
-/* Contenedor del login */
-section {
+/* SOLO LOGIN */
+#login {
     width: 320px;
     padding: 30px 25px;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
     border-radius: 16px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
     display: flex;
@@ -30,7 +29,7 @@ section {
 }
 
 /* Título */
-section h3 {
+#login h3 {
     margin: 0 0 10px 0;
     text-align: center;
     color: #fff;
@@ -39,27 +38,17 @@ section h3 {
 }
 
 /* Inputs */
-section input {
+#login input {
     padding: 12px 14px;
     border: none;
     border-radius: 10px;
     outline: none;
     font-size: 0.95rem;
     background: rgba(255, 255, 255, 0.85);
-    transition: box-shadow 0.3s, transform 0.2s;
-}
-
-section input::placeholder {
-    color: #777;
-}
-
-section input:focus {
-    box-shadow: 0 0 0 2px #667eea;
-    transform: scale(1.02);
 }
 
 /* Botón */
-section button {
+#login button {
     margin-top: 10px;
     padding: 12px;
     border: none;
@@ -68,18 +57,6 @@ section button {
     color: white;
     font-size: 1rem;
     font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
-}
-
-section button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-    opacity: 0.95;
-}
-
-section button:active {
-    transform: scale(0.97);
 }
 
 /* Animación */
