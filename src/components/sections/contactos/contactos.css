@@ -1,13 +1,38 @@
+/* estilos para la sección de contactos */
+
 #contactos {
     width: 100%;
-    padding: 10px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
+    background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+    border-radius: 16px;
 }
 
 #lista-contactos {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 10px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+/* Estilos para la barra de desplazamiento personalizada */
+
+#lista-contactos::-webkit-scrollbar {
+    width: 8px;
+}
+
+#lista-contactos::-webkit-scrollbar-track {
+    background: rgba(139, 92, 246, 0.1);
+    border-radius: 10px;
+}
+
+#lista-contactos::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+    border-radius: 10px;
 }

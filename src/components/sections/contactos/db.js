@@ -1,3 +1,5 @@
+/* Base de datos simulada de contactos */
+
 let ContacList = [
     { nombre: "Bradley ", telefono: "5551234" },
     { nombre: "Ana ", telefono: "5555678" },

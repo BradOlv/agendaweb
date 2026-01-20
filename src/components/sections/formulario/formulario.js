@@ -1,5 +1,6 @@
-import { ContacList } from "../contactos/db.js";
+/* Componente de formulario para agregar nuevos contactos */
 
+import { getContactsFromStorage, saveContactsToStorage } from "../../common/storage.js";
 function formulario() {
 
     let form = document.createElement("form");
@@ -23,15 +24,37 @@ function formulario() {
     form.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        ContacList.push({
+       let listaStorage = getContactsFromStorage() || [];
+
+        /* Creamos el nuevo objeto */
+
+        const nuevoContacto = {
             nombre: inputNombre.value,
             telefono: inputTelefono.value
-        });
+        };
 
-        console.log(ContacList);
+        /* Lo agregamos a la lista y guardamos en LocalStorage */   
+
+
+        listaStorage.push(nuevoContacto);
+        saveContactsToStorage(listaStorage);
+
+        alert("Contacto guardado en LocalStorage");
+        
+        /* Limpiar inputs */
+
+
+        inputNombre.value = "";
+        inputTelefono.value = "";
+        
+        /* Redirigir Y recargar para ver el cambio */
+
+        
+        window.location.hash = "#/contactos"; 
     });
 
     return form;
+    
 }
 
 export { formulario };
