@@ -1,10 +1,14 @@
-/* Reset básico */
+/* Estilos para la sección de login con fondo animado y diseño moderno */
+
+
 * {
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Fondo general */
+
+/* Estilos para el fondo animado */
+
 body {
     margin: 0;
     height: 100vh;
@@ -26,6 +30,8 @@ body::before {
     animation: backgroundMove 20s linear infinite;
 }
 
+/* Animación del fondo */
+
 @keyframes backgroundMove {
     0% {
         transform: translate(0, 0);
@@ -35,7 +41,8 @@ body::before {
     }
 }
 
-/* SOLO LOGIN */
+/* Estilos para el contenedor de login */
+
 #login {
     width: 340px;
     padding: 35px 30px;

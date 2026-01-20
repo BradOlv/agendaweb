@@ -1,3 +1,5 @@
+/* estilos para la sección de contactos */
+
 #contactos {
     width: 100%;
     padding: 20px;
@@ -18,6 +20,8 @@
     max-height: 600px;
     overflow-y: auto;
 }
+
+/* Estilos para la barra de desplazamiento personalizada */
 
 #lista-contactos::-webkit-scrollbar {
     width: 8px;

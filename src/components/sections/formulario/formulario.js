@@ -1,3 +1,5 @@
+/* Componente de formulario para agregar nuevos contactos */
+
 import { getContactsFromStorage, saveContactsToStorage } from "../../common/storage.js";
 function formulario() {
 
@@ -24,23 +26,30 @@ function formulario() {
 
        let listaStorage = getContactsFromStorage() || [];
 
-        // 2. Creamos el nuevo objeto
+        /* Creamos el nuevo objeto */
+
         const nuevoContacto = {
             nombre: inputNombre.value,
             telefono: inputTelefono.value
         };
 
-        // 3. Lo agregamos a la lista y guardamos en LocalStorage
+        /* Lo agregamos a la lista y guardamos en LocalStorage */   
+
+
         listaStorage.push(nuevoContacto);
         saveContactsToStorage(listaStorage);
 
         alert("Contacto guardado en LocalStorage");
         
-        // Limpiar inputs
+        /* Limpiar inputs */
+
+
         inputNombre.value = "";
         inputTelefono.value = "";
         
-        // Opcional: Redirigir o recargar para ver el cambio
+        /* Redirigir Y recargar para ver el cambio */
+
+        
         window.location.hash = "#/contactos"; 
     });
 

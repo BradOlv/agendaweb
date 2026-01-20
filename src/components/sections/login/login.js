@@ -1,3 +1,6 @@
+/* Componente de sección de login */
+
+
 function login() {
     let section = document.createElement("section");
     section.id = "login";
@@ -15,12 +18,14 @@ function login() {
     let button = document.createElement("button");
     button.textContent = "Iniciar Sesión";
 
-    // Al hacer clic, simplemente cambiamos de página
+/* Al hacer clic, simplemente cambiamos de página*/
+
     button.addEventListener("click", () => {
-        // Esta línea es la que hace el "salto" de index.html a app.html
         window.location.href = "src/app.html";
     });
 
+    /* Agregamos los elementos a la sección */
+    
     section.append(h3, user, pass, button);
     return section;
 }

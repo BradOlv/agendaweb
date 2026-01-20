@@ -1,3 +1,6 @@
+
+/* estilos para el formulario de creación de contactos */
+
 #formulario {
     width: 100%;
     min-height: 240px;
@@ -48,6 +51,8 @@
     transition: all 0.3s ease;
     box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
 }
+
+/* Estilos para el botón al pasar el cursor y al hacer clic */
 
 #formulario button:hover {
     background: linear-gradient(135deg, #059669, #047857);

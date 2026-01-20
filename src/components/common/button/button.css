@@ -1,3 +1,4 @@
+/* Estilo general para todos los botones del menú lateral */
 .button {
     width: 240px;
     height: 60px;
@@ -11,53 +12,63 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Colores diferentes para cada botón */
+/* Diseño y colores específicos para el botón de Agenda */
 .button.agenda {
     background: linear-gradient(135deg, #6366f1, #8b5cf6);
     box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
 }
 
+/* Efecto visual cuando el mouse pasa sobre el botón de Agenda */
 .button.agenda:hover {
     background: linear-gradient(135deg, #7c3aed, #a78bfa);
 }
 
+/* Diseño y colores específicos para el botón de Crear Contacto */
 .button.plus {
     background: linear-gradient(135deg, #10b981, #059669);
     box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
 }
 
+/* Efecto visual cuando el mouse pasa sobre el botón de Crear Contacto */
 .button.plus:hover {
     background: linear-gradient(135deg, #059669, #047857);
 }
 
+/* Diseño y colores específicos para el botón de ToDoList */
 .button.todolist {
     background: linear-gradient(135deg, #f59e0b, #d97706);
     box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
 }
 
+/* Efecto visual cuando el mouse pasa sobre el botón de ToDoList */
 .button.todolist:hover {
     background: linear-gradient(135deg, #d97706, #b45309);
 }
 
+/* Diseño y colores específicos para el botón de Crear Tarea */
 .button.creartarea {
     background: linear-gradient(135deg, #3b82f6, #2563eb);
     box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
 }
 
+/* Efecto visual cuando el mouse pasa sobre el botón de Crear Tarea */
 .button.creartarea:hover {
     background: linear-gradient(135deg, #2563eb, #1d4ed8);
 }
 
+/* Efectos generales de movimiento y sombra al pasar el mouse por cualquier botón */
 .button:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
     background: linear-gradient(135deg, #7c3aed, #a78bfa);
 }
 
+/* Efecto de presión cuando se hace clic en el botón */
 .button:active {
     transform: translateY(0);
 }
 
+/* Contenedor circular para los iconos dentro de los botones */
 .button-image {
     width: 36px;
     height: 36px;
@@ -69,10 +80,12 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Ajuste de tamaño para la imagen del icono */
 .button-image img {
     width: 20px;
 }
 
+/* Estilos de fuente y color para el texto de los botones */
 .button-text {
     color: white;
     font-weight: 600;

@@ -1,23 +1,27 @@
-const CONTACTS_KEY = 'agenda_telefonica';
-const TODO_KEY = 'todo_list';
+/* Módulo para manejar el almacenamiento local de contactos y tareas */
+
+const contacts_key = 'agenda_telefonica';
+const todo_key = 'todo_list';
 
 function saveContactsToStorage(contactos) {
-    localStorage.setItem(CONTACTS_KEY, JSON.stringify(contactos));
+    localStorage.setItem(contacts_key, JSON.stringify(contactos));
 }
 
 function getContactsFromStorage() {
-    let data = localStorage.getItem(CONTACTS_KEY);
+    let data = localStorage.getItem(contacts_key);
     return data ? JSON.parse(data) : null;
 }
 
 function saveTasksToStorage(tasks) {
-    localStorage.setItem(TODO_KEY, JSON.stringify(tasks));
+    localStorage.setItem(todo_key, JSON.stringify(tasks));
 }
 
 function getTasksFromStorage() {
-    let data = localStorage.getItem(TODO_KEY);
+    let data = localStorage.getItem(todo_key);
     return data ? JSON.parse(data) : [];
 }
+
+/* Exportamos las funciones para usarlas en otros módulos */
 
 export { 
     getContactsFromStorage, 

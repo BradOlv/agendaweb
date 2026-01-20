@@ -89,6 +89,8 @@
     font-size: 14px;
 }
 
+/* Estilos para los botones de completar y eliminar tarea */
+
 .task-item button:first-of-type {
     background: linear-gradient(135deg, #3b82f6, #2563eb);
     color: white;
@@ -112,6 +114,7 @@
 }
 
 /* Estilo Responsive básico */
+
 @media (max-width: 600px) {
     .task-item {
         flex-direction: column;

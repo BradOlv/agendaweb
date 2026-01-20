@@ -1,3 +1,5 @@
+/* Componente de sección de lista de tareas */
+
 import { getTasksFromStorage, saveTasksToStorage } from "../../common/storage.js";
 
 function toDoList() {
@@ -15,8 +17,9 @@ function toDoList() {
         container.innerHTML = "";
         let tareas = getTasksFromStorage();
 
-            // Definimos el peso de cada prioridad
-            
+/* Ordenamos las tareas por prioridad: Alta, Media, Baja */
+
+
         let pesos = { "Alta": 1, "Media": 2, "Baja": 3 };
         tareas.sort((a, b) => pesos[a.prioridad] - pesos[b.prioridad]);
 
@@ -51,6 +54,8 @@ function toDoList() {
         });
     };
 
+    /* Pintamos las tareas inicialmente */
+    
     pintarTareas();
     section.appendChild(container);
     return section;

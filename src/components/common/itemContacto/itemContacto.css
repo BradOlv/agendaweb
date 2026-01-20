@@ -1,18 +1,21 @@
+
+/* Estilo base de la tarjeta (Tu diseño original) */
+
 .item-contacto {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1rem;
- 
     border: 2px solid #e0e7ff;
     border-radius: 1rem;
     background: linear-gradient(135deg, #ffffff, #f3f4f6);
- 
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
+    align-items: center; 
     gap: 1rem;
     padding: 1rem;
     box-shadow: 0 2px 8px rgba(99, 102, 241, 0.1);
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .item-contacto:hover {
@@ -20,4 +23,60 @@
     box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
     transform: translateY(-2px);
     background: linear-gradient(135deg, #fefefe, #faf5ff);
+}
+
+/* Modal que aparece al hacer hover sobre el contacto */
+
+.perfil-modal-hover {
+    position: fixed;
+    z-index: 10000; 
+    pointer-events: none; 
+    width: 260px;
+    margin: 0; 
+    padding: 0;
+    animation: aparecerSubiendo 0.3s ease-out;
+}
+
+
+.perfil-contenido-hover {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 1.2rem;
+    border: 3px solid #8b5cf6;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Animación que sube un poco al aparecer el modal  */
+
+@keyframes aparecerSubiendo {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.perfil-contenido-hover img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 0.8rem;
+    border: 2px solid #e0e7ff;
+}
+
+.perfil-contenido-hover h4 {
+    margin: 0.5rem 0;
+    color: #1e1b4b;
+    font-size: 1.2rem;
+}
+
+.perfil-contenido-hover p {
+    font-size: 0.9rem;
+    margin: 0.3rem 0;
+    color: #4b5563;
+}
+
+/* Animación más elegante */
+
+@keyframes aparecerSubiendo {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }

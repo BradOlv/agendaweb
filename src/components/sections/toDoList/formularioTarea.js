@@ -1,5 +1,9 @@
 
+/* Componente de formulario para agregar tareas a la lista de tareas */
+
+
 import { getTasksFromStorage, saveTasksToStorage } from "../../common/storage.js";
+import { toDoList } from "./toDoList.js";
 
 function formularioTarea() {
     let form = document.createElement("form");
@@ -28,6 +32,8 @@ function formularioTarea() {
     button.type = "submit";
     button.textContent = "Guardar Tarea";
 
+    /* Agregamos los elementos al formulario */
+
     form.append(title, inputTitulo, selectPrioridad, button);
 
     form.addEventListener("submit", (e) => {
@@ -47,11 +53,14 @@ function formularioTarea() {
         
         inputTitulo.value = "";
 
-        // Redirección manual al ToDoList para ver el cambio
+    /* Redirección manual al ToDoList para ver el cambio */
 
         let container = document.getElementById("container");
+
+        if (container) {
         container.innerHTML = "";
         container.appendChild(toDoList()); 
+    } 
     });
 
     return form;

@@ -1,16 +1,18 @@
-
+/* Archivo principal de la aplicación */
 
 import { Button } from "./components/common/button/button.js";
 import { contactos } from "./components/sections/contactos/contactos.js";
 import { formulario } from "./components/sections/formulario/formulario.js";
-// Agregamos los nuevos sin borrar los de arriba
 import { toDoList } from "./components/sections/toDoList/toDoList.js";
 import { formularioTarea } from "./components/sections/toDoList/formularioTarea.js";
+import { favoritos } from "./components/sections/favoritos/favoritos.js";
+
 
 let nav = document.getElementById("nav");
 let container = document.getElementById("container");
 
-// BOTÓN AGENDA (Existente)
+/* boton agenda*/
+
 nav.appendChild(Button(
     "Agenda",
     "agenda",
@@ -21,7 +23,8 @@ nav.appendChild(Button(
     }
 ));
 
-// BOTÓN CREAR CONTACTO (Existente)
+/* boton crear contacto */
+
 nav.appendChild(Button(
     "crear contacto",
     "plus",
@@ -32,7 +35,8 @@ nav.appendChild(Button(
     }
 ));
 
-// BOTÓN TODOLIST (Nuevo - Ahora con la función callback)
+ /* boton toDoList*/
+
 nav.appendChild(Button(
     "ToDoList", 
     "todolist", 
@@ -43,7 +47,8 @@ nav.appendChild(Button(
     }
 ));
 
-// BOTÓN CREAR TAREA (Nuevo - Ahora con la función callback)
+ /* boton crear tarea   */
+
 nav.appendChild(Button(
     "Crear tarea", 
     "creartarea", 
@@ -54,5 +59,31 @@ nav.appendChild(Button(
     }
 ));
 
-// Carga inicial (lo que se ve al abrir la app)
+/* boton favs   */
+ 
+nav.appendChild(Button(
+    "Favoritos", 
+    "favoritos", 
+    "user.svg",
+    function () {
+        container.innerHTML = "";
+        container.appendChild(favoritos());
+    }
+));
+
+
+/* Vista inicial: contactos */
+
+
 container.appendChild(contactos());
+
+async function tareas() {
+    try {
+        let data = await fetch("https://jsonplaceholder.typicode.com/posts");
+        let r = await data.json();
+        console.log(r);
+     } catch (error) {
+    }  
+}      
+tareas();
+console.log("Completado");
