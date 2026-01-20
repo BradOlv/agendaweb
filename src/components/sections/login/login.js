@@ -1,24 +1,24 @@
 function login() {
-    const section = document.createElement("section");
+    let section = document.createElement("section");
     section.id = "login";
 
-    const h3 = document.createElement("h3");
+    let h3 = document.createElement("h3");
     h3.textContent = "Login";
 
-    const user = document.createElement("input");
+    let user = document.createElement("input");
     user.placeholder = "Usuario";
 
-    const pass = document.createElement("input");
+    let pass = document.createElement("input");
     pass.type = "password";
     pass.placeholder = "Password";
 
-    const button = document.createElement("button");
+    let button = document.createElement("button");
     button.textContent = "Iniciar Sesión";
 
+    // Al hacer clic, simplemente cambiamos de página
     button.addEventListener("click", () => {
-        const root = document.getElementById("root");
-        root.innerHTML = "";
-        cargarApp();
+        // Esta línea es la que hace el "salto" de index.html a app.html
+        window.location.href = "src/app.html";
     });
 
     section.append(h3, user, pass, button);

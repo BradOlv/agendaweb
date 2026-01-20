@@ -3,17 +3,15 @@ import { ContacList } from "./db.js";
 import { getContactsFromStorage, saveContactsToStorage } from "../../common/storage.js";
 
 function contactos() {
-    const section = document.createElement("section");
+    let section = document.createElement("section");
     section.id = "contactos";
 
-    const h2 = document.createElement("h2");
+    let h2 = document.createElement("h2");
     h2.textContent = "Contactos";
     section.appendChild(h2);
 
+    let contactosActuales = getContactsFromStorage();
 
-let contactosActuales = getContactsFromStorage();
-
-    // Si no hay nada en storage, usamos los de db.js y los guardamos por primera vez
     if (!contactosActuales) {
         contactosActuales = ContacList;
         saveContactsToStorage(contactosActuales);
@@ -21,7 +19,7 @@ let contactosActuales = getContactsFromStorage();
 
     contactosActuales.forEach(contacto => {
         section.appendChild(
-            ItemContacto("user.svg", contacto.nombre, contacto.telefono)
+            ItemContacto("user", contacto.nombre, contacto.telefono)
         );
     });
 
@@ -29,4 +27,3 @@ let contactosActuales = getContactsFromStorage();
 }
 
 export { contactos };
-    

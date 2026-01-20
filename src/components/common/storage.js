@@ -1,14 +1,27 @@
-// src/components/common/storage.js
-
-const LOCAL_STORAGE_KEY = 'agenda_telefonica';
+const CONTACTS_KEY = 'agenda_telefonica';
+const TODO_KEY = 'todo_list';
 
 function saveContactsToStorage(contactos) {
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contactos));
+    localStorage.setItem(CONTACTS_KEY, JSON.stringify(contactos));
 }
 
 function getContactsFromStorage() {
-    const data = localStorage.getItem(LOCAL_STORAGE_KEY);
-    return data ? JSON.parse(data) : null; // Retorna null si no hay nada
+    let data = localStorage.getItem(CONTACTS_KEY);
+    return data ? JSON.parse(data) : null;
 }
 
-export { LOCAL_STORAGE_KEY, getContactsFromStorage, saveContactsToStorage };
+function saveTasksToStorage(tasks) {
+    localStorage.setItem(TODO_KEY, JSON.stringify(tasks));
+}
+
+function getTasksFromStorage() {
+    let data = localStorage.getItem(TODO_KEY);
+    return data ? JSON.parse(data) : [];
+}
+
+export { 
+    getContactsFromStorage, 
+    saveContactsToStorage, 
+    getTasksFromStorage, 
+    saveTasksToStorage 
+};

@@ -1,0 +1,57 @@
+/* src/components/sections/toDoList/formularioTarea.css */
+
+#formulario-tarea {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 25px;
+    max-width: 450px;
+    margin: 20px auto;
+    background: linear-gradient(135deg, #ffffff, #fef3c7);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(245, 158, 11, 0.2);
+    border: 2px solid #fde68a;
+}
+
+#formulario-tarea input, 
+#formulario-tarea select, 
+#formulario-tarea button {
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 2px solid #fde68a;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+#formulario-tarea input:focus,
+#formulario-tarea select:focus {
+    outline: none;
+    border-color: #f59e0b;
+    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+}
+
+#formulario-tarea select {
+    background: white;
+    cursor: pointer;
+}
+
+#formulario-tarea button {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+#formulario-tarea button:hover {
+    background: linear-gradient(135deg, #059669, #047857);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+}
+
+#formulario-tarea button:active {
+    transform: translateY(0);
+}
