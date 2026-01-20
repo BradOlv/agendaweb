@@ -15,11 +15,15 @@ function formulario() {
     let inputTelefono = document.createElement("input");
     inputTelefono.placeholder = "Teléfono";
 
+    let inputFecha = document.createElement("input");
+    inputFecha.type = "date";
+    inputFecha.required = true;
+
     let button = document.createElement("button");
     button.type = "submit";
     button.textContent = "Guardar contacto";
 
-    form.append(title, inputNombre, inputTelefono, button);
+    form.append(title, inputNombre, inputTelefono, inputFecha, button);
 
     form.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -30,7 +34,8 @@ function formulario() {
 
         const nuevoContacto = {
             nombre: inputNombre.value,
-            telefono: inputTelefono.value
+            telefono: inputTelefono.value,
+            fecha: inputFecha.value
         };
 
         /* Lo agregamos a la lista y guardamos en LocalStorage */   
@@ -46,6 +51,7 @@ function formulario() {
 
         inputNombre.value = "";
         inputTelefono.value = "";
+        inputFecha.value = "";
         
         /* Redirigir Y recargar para ver el cambio */
 

@@ -1,6 +1,6 @@
 // Componente de ítem de contacto con modal hover
     
-    let ItemContacto = (imgContacto, nombre, telefono) => {
+    let ItemContacto = (imgContacto, nombre, telefono, esFavorito = false, onFavoritoChange = null, fecha = null) => {
     let div = document.createElement("div");
     div.className = "item-contacto";
 
@@ -13,6 +13,22 @@
 
     let etiquetaTelefono = document.createElement("p");
     etiquetaTelefono.textContent = telefono;
+
+    /* Estrella para marcar como favorito */
+    let estrella = document.createElement("button");
+    estrella.className = "favorito-estrella";
+    estrella.innerHTML = esFavorito ? "★" : "☆";
+    estrella.type = "button";
+    estrella.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const nuevoEstado = !esFavorito;
+        esFavorito = nuevoEstado;
+        estrella.innerHTML = nuevoEstado ? "★" : "☆";
+        if (onFavoritoChange) {
+            onFavoritoChange(nombre, nuevoEstado);
+        }
+    });
 
   let modal;
   
@@ -28,6 +44,7 @@
                 <h4>${nombre}</h4>
                 <p><strong>Tel:</strong> ${telefono}</p>
                 <p style="color: #6366f1; font-size: 0.8rem;">${nombre.toLowerCase().replace(/\s+/g, '.')}@estudiante.com</p>
+                ${fecha ? `<p style="color: #6b7280; font-size: 0.85rem;"><strong>Fecha:</strong> ${fecha}</p>` : ''}
             </div>
         `;
 
@@ -58,9 +75,14 @@
         }
     });
 
-    div.appendChild(etiquetaImg);
-    div.appendChild(etiquetaNombre);
-    div.appendChild(etiquetaTelefono);
+    let containerContacto = document.createElement("div");
+    containerContacto.className = "container-contacto";
+    containerContacto.appendChild(etiquetaImg);
+    containerContacto.appendChild(etiquetaNombre);
+    containerContacto.appendChild(etiquetaTelefono);
+
+    div.appendChild(estrella);
+    div.appendChild(containerContacto);
 
     return div;
 };

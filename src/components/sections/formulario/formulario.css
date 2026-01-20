@@ -33,6 +33,10 @@
     transition: all 0.3s ease;
 }
 
+#formulario input[type="date"] {
+    cursor: pointer;
+}
+
 #formulario input:focus {
     outline: none;
     border-color: #8b5cf6;

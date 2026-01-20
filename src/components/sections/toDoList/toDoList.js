@@ -27,6 +27,20 @@ function toDoList() {
         tareas.forEach((tarea, index) => {
             let div = document.createElement("div");
             div.className = "task-item";
+            if (tarea.completada) {
+                div.classList.add("completed");
+            }
+
+            /* Checkbox para marcar como completada */
+            let checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            checkbox.className = "task-checkbox";
+            checkbox.checked = tarea.completada || false;
+            checkbox.addEventListener("change", () => {
+                tarea.completada = checkbox.checked;
+                saveTasksToStorage(tareas);
+                pintarTareas();
+            });
 
             let p = document.createElement("p");
             p.textContent = `${tarea.titulo} - [${tarea.prioridad}]`;
@@ -49,7 +63,7 @@ function toDoList() {
                 pintarTareas();
             });
 
-            div.append(p, btnEditar, btnEliminar);
+            div.append(checkbox, p, btnEditar, btnEliminar);
             container.appendChild(div);
         });
     };

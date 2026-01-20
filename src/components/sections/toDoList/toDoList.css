@@ -69,6 +69,20 @@
     background: linear-gradient(135deg, #ffffff, #d1fae5);
 }
 
+.task-checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-right: 12px;
+    flex-shrink: 0;
+    accent-color: #f59e0b;
+}
+
+.task-item.completed p {
+    text-decoration: line-through;
+    color: #9ca3af;
+}
+
 .task-item p {
     margin: 0;
     flex-grow: 1;

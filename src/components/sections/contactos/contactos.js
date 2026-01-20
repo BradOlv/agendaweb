@@ -1,7 +1,7 @@
 /* contactos.js */
 
 import { ItemContacto } from "../../common/itemContacto/itemContacto.js";
-import { getContactsFromStorage } from "../../common/storage.js";
+import { getContactsFromStorage, saveContactsToStorage } from "../../common/storage.js";
 
 /* Función que crea la sección de contactos */
 
@@ -20,8 +20,15 @@ function contactos() {
     if (lista != null) {
         if (lista.length > 0) {
             lista.forEach(contacto => {
+                const handleFavoritoChange = (nombre, esFavorito) => {
+                    const index = lista.findIndex(c => c.nombre === nombre);
+                    if (index !== -1) {
+                        lista[index].favorito = esFavorito;
+                        saveContactsToStorage(lista);
+                    }
+                };
                 section.appendChild(
-                    ItemContacto("user", contacto.nombre, contacto.telefono)
+                    ItemContacto("user", contacto.nombre, contacto.telefono, contacto.favorito || false, handleFavoritoChange, contacto.fecha)
                 );
             });
         } else {
