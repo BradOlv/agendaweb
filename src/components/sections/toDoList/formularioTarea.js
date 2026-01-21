@@ -13,7 +13,10 @@ function formularioTarea() {
     title.textContent = "Nueva Tarea";
 
     let inputTitulo = document.createElement("input");
-    inputTitulo.placeholder = "Descripción de la tarea";
+    inputTitulo.placeholder = "Título de la tarea";
+
+    let inputDescripcion = document.createElement("input");
+    inputDescripcion.placeholder = "Descripción de la tarea";
 
     let selectPrioridad = document.createElement("select");
     
@@ -34,7 +37,7 @@ function formularioTarea() {
 
     /* Agregamos los elementos al formulario */
 
-    form.append(title, inputTitulo, selectPrioridad, button);
+    form.append(title, inputTitulo, inputDescripcion, selectPrioridad, button);
 
     form.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -43,7 +46,9 @@ function formularioTarea() {
 
         let nuevaTarea = {
             titulo: inputTitulo.value,
-            prioridad: selectPrioridad.value
+            descripcion: inputDescripcion.value,
+            prioridad: selectPrioridad.value,
+            completada: false
         };
 
         listaTareas.push(nuevaTarea);
@@ -52,6 +57,7 @@ function formularioTarea() {
         alert("Tarea guardada correctamente");
         
         inputTitulo.value = "";
+        inputDescripcion.value = "";
 
     /* Redirección manual al ToDoList para ver el cambio */
 
